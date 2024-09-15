@@ -13,7 +13,15 @@ function criaCalculadora() {
         if (el.classList.contains("btn-num")) {
           this.btnForDisplay(el.innerText);
         }
+
+        if (el.classList.contains("btn-clear")) {
+          this.clearDisplay();
+        }
       });
+    },
+
+    clearDisplay() {
+      this.display.value = "";
     },
 
     btnForDisplay(valor) {
