@@ -17,15 +17,37 @@ function criaCalculadora() {
         if (el.classList.contains("btn-clear")) {
           this.clearDisplay();
         }
-      });
-    },
 
-    clearDisplay() {
-      this.display.value = "";
+        if (el.classList.contains("btn-del")) {
+          this.apagarUm();
+        }
+
+        if (el.classList.contains("btn-eq")) {
+          this.calcularConta();
+        }
+      });
     },
 
     btnForDisplay(valor) {
       this.display.value += valor;
+    },
+
+    calcularConta() {
+      try {
+        // Avalia a expressão no display usando math.js
+        this.display.value = math.evaluate(this.display.value);
+      } catch (e) {
+        // Se ocorrer um erro, exibe uma mensagem de erro
+        this.display.value = "Erro";
+      }
+    },
+
+    apagarUm() {
+      this.display.value = this.display.value.slice(0, -1);
+    },
+
+    clearDisplay() {
+      this.display.value = "";
     },
   };
 }
