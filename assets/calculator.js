@@ -4,6 +4,7 @@ function criaCalculadora() {
 
     inicia() {
       this.clickBotoes();
+      this.pressEnter();
     },
 
     clickBotoes() {
@@ -30,6 +31,7 @@ function criaCalculadora() {
 
     btnForDisplay(valor) {
       this.display.value += valor;
+      this.display.focus();
     },
 
     calcularConta() {
@@ -48,6 +50,14 @@ function criaCalculadora() {
 
     clearDisplay() {
       this.display.value = "";
+    },
+
+    pressEnter() {
+      this.display.addEventListener("keypress", (e) => {
+        if (e.keyCode === 13) {
+          this.calcularConta();
+        }
+      });
     },
   };
 }
