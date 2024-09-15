@@ -1,0 +1,54 @@
+:root {
+  --Primary-collor: #0884e392;
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--Primary-collor);
+  font-size: 1.3em;
+  line-height: 1em;
+}
+
+.container {
+  font-family: sans-serif;
+  background: white;
+  max-width: 640px;
+  border: 2px solid crimson;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.calculator {
+  width: 400px;
+}
+.display {
+  font-size: 1.5em;
+  width: 100%;
+  text-align: right;
+  padding-right: 3px;
+}
+
+.btn {
+  width: 100%;
+  height: 50px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  background: rgb(144, 194, 244);
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background: rgb(74, 116, 158);
+  color: red;
+}
